@@ -13,8 +13,16 @@ jobs:
            who-to-greet: John
       - name: Log Greeting time
         run: echo "${{ steps.greet.outputs.time }}"
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: List files after checkout
+        run: |
+          pwd
+          ls -a
   
 
+# Action
+# - it is an a piece of code that we can write or someone has written and we can use that
 
 
 # uses in yml file - > it takes reference of actions
