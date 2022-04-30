@@ -3,7 +3,7 @@ name: Shell commands- It is an name of worfklow command
 on: [push]
 
 jobs:
-  run-shell-command:
+  job1:
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
