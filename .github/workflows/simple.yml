@@ -12,3 +12,6 @@ jobs:
         run: |
           node -v
           npm -v
+
+## We can send notification on success and failure of workflows
+# for that we can manage from github settings

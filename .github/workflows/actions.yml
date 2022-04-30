@@ -1,0 +1,22 @@
+name: Actions workflow
+
+on: [push]
+
+jobs:
+  runs-github-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS Actions
+        id: greet
+        uses: actions/hello-world-javascript-action@v1.1
+        with: 
+           who-to-greet: John
+      - name: Log Greeting time
+        run: echo "${{ steps.greet.outputs.time }}"
+  
+
+
+
+# uses in yml file - > it takes reference of actions
+# steps in yml file - > steps is the variable provided by github 
+   # with the help of steps we can acess specific step in jobs
