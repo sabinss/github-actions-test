@@ -7,14 +7,19 @@ on:
 
 jobs:
   release:
-    name: Release
+    name: Semanti release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
         with:
           node-version: "16.x"
-      - run: npx semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Sematic versioninig
+        id: versioninig
+        uses: PaulHatch/semantic-version@v4.0.2
+        with:
+          branch: main
+          tag_prefix: "v"
+          major_pattern: "(MAJOR)"
+          minor_pattern: "(MINOR)"
+          format: "${major}.${minor}.${patch}-prerelease${increment}"
