@@ -16,4 +16,5 @@ jobs:
       - run: git config --global user.name 'sabinss'
       - run: git config --global user.email 'sabinshrestha292@gmail.com'
       - run: npm version patch -m "[RELEASE] %s"
+      - run: git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
       - run: git push
